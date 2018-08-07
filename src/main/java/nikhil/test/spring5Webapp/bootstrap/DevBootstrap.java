@@ -38,8 +38,16 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         Author rowling = new Author("Joanne Kathaleen","Rowling");
         Book jkBooks = new Book("Harry Potter and the Philosopher's stone","1234JKR1","bloomsbury");
         rowling.getBooks().add(jkBooks);
-
         authorRepository.save(rowling);
         bookRepository.save(jkBooks);
+        //Stephanie Meyer
+        Author meyer = new Author("Stephanie","Meyer");
+        Book meyerBook = new Book("Twilight","112341","Bloomsbury");
+        meyerBook.getAuthors().add(meyer);
+        meyer.getBooks().add(meyerBook);
+
+        authorRepository.save(meyer);
+        bookRepository.save(meyerBook);
+
     }
 }
